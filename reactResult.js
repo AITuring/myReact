@@ -1,14 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+import myReact from "./myReact";
 
-const element = React.createElement(
+const element = myReact.createElement(
     'div',
     {
         title: 'react div',
+        className: 'my-div',
+        style: {
+            color: 'red',
+        }
     },
-    'Hello, React!'
+    'div part',
+    myReact.createElement('a', {
+        href: 'https://www.baidu.com',
+        target: '_blank',
+        style: {
+            color: 'blue',
+        }
+    }, 'a part'),
 );
 
 console.log(element);
 
-ReactDOM.render(element, document.getElementById('app'));
+myReact.render(element, document.getElementById('app'));
